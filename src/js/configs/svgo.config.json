@@ -1,0 +1,8 @@
+{
+    "plugins": [
+        {"removeTitle": true},
+        {"convertColors": {"shorthex": false}},
+        {"convertPathData": false},
+        {"removeAttrs": { "attrs": "stroke" } }
+    ]
+}

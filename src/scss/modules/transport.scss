@@ -1,0 +1,93 @@
+.transport {
+    padding-top: 130px;
+    padding-bottom: 100px;
+    background: no-repeat center center;
+    background-size: cover;
+    color: $secondaryFontColor;
+    font-family: $transportTextFont;
+    & .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &_description {
+        width: 80%;
+        margin-left: auto;
+        @include for-phone($phoneWidth) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &_title {
+        position: relative;
+        font-family: $transportTitleFont;
+        font-size: rem(55);
+        text-transform: uppercase;
+        &::before {
+            content: '';
+            display: block;
+            width: 85px;
+            height: 5px;
+            position: absolute;
+            top: 40%; // Because of uppercase of the title had to set 40% instead of 50%
+            left: -110px;
+            transform: translateY(-40%);
+            background: url(/assets/img/transport_line.png) no-repeat;
+            @include for-phone($phoneWidth) {
+                display: none;
+            }
+        }
+    }
+    &_subtitle {
+        color: $neutralFontColor;
+    }
+    &_benefits_list {
+        margin-top: 40px;
+    }
+}
+
+.benefits {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    &_item {
+        display: flex;
+        max-width: 100%;
+        align-items: center;
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        &:nth-child(even) {
+            justify-content: flex-end;
+            @include for-tablet($tableWidth) {
+                justify-content: center;
+            }
+        }
+        // Positioning odd elements by diagonal
+        @include marginLeftForOdd(270px, 55px, 5);
+        // Positioning even elements by diagonal
+        @include marginRightForEven(170px, 55px, 5);
+
+        @include for-desktop($transportDesktopBpoint) {
+            @include marginLeftForOdd(300px, 55px, 5);
+            @include marginRightForEven(10px, 55px, 5);
+        }
+        @include for-tablet($tableWidth) {
+            justify-content: center;
+            @include marginLeftForOdd(0, 0, 5);
+            @include marginRightForEven(0, 0, 5);
+        }
+    }
+    &_view {
+        max-width: 120px;
+    }
+    &_img {
+        @include imageCenterX;
+    }
+    &_text {
+        font-size: rem(20);
+        margin-left: 35px;
+        font-family: $transportTitleFont;
+        text-transform: uppercase;
+    }
+}

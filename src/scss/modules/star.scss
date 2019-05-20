@@ -1,0 +1,99 @@
+.star {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    & .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    & .vertical_line {
+        margin-bottom: 50px;
+    }
+    &_description {
+        margin-bottom: 70px;
+        text-align: center;
+    }
+    &_title {
+        font-size: rem(72);
+        text-align: center;
+        font-family: $starSubTitleFont;
+        font-weight: 700;
+        color: $mainFontColor;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include for-tablet($tableWidth) {
+            font-size: rem(58);
+        }
+        @include for-phone($phoneWidth) {
+            font-size: rem(44);
+        }
+    }
+    &_subtitle {
+        font-size: rem(24);
+        text-transform: uppercase;
+        font-family: $starSubTitleFont;
+        font-weight: 400;
+        letter-spacing: 5px;
+        @include for-tablet($tableWidth) {
+            font-size: rem(16);
+        }
+        @include for-phone($phoneWidth) {
+            font-size: rem(14);
+            letter-spacing: 2px;
+        }
+    }
+}
+
+.gallery {
+    font-size: 0; // Remove default spacing between gallery_item
+    &_item {
+        display: inline-block;
+        width: calc(50% - 15px);
+        height: 690px;
+        &:not(:last-child) {
+            @include for-tablet($tableWidth) {
+                width: 100%;
+                margin: 0 0 30px;
+            }
+        }
+        &:last-child {
+            @include for-tablet($tableWidth) {
+                width: 100%;
+                margin: 0 0 30px;
+            }
+        }
+        &:nth-child(odd) {
+            margin: 0 15px 195px 0;
+        }
+        &:nth-child(even) {
+            margin: 195px 0 0 15px;
+        }
+    }
+    & .item_gallery {
+        position: relative;
+        &_sign {
+            position: absolute;
+            max-width: 100%;
+            bottom: 0;
+            right: 0;
+            padding: 40px 75px 40px 145px;
+            background: $defaulColor;
+            font-size: rem(30);
+            text-align: center;
+            font-family: $starSubTitleFont;
+            font-weight: 700;
+            &:before {
+                content: '';
+                width: 60px;
+                position: absolute;
+                top: 50%;
+                left: 60px;
+                border-bottom: 2px solid $lightColor;
+            }
+        }
+        &_img {
+            @include imageCover;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+.contact {
+    display: flex;
+    min-height: 675px;
+    align-items: center;
+    margin: 30px 0 0;
+    background: no-repeat 50% 0;
+    background-size: cover;
+    font-family: $contactMainFont;
+    font-style: italic;
+    & .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    &_title {
+        margin-bottom: 40px;
+        font-size: rem(72);
+        text-transform: uppercase;
+        text-align: center;
+        color: $secondaryFontColor;
+    }
+}
+
+.form_contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include for-desktop($formSmDesktopBpoint) {
+        flex-direction: column;
+        align-items: center;
+    }
+    &_wrapper {
+        width: 31%;
+        position: relative;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.8);
+        transform: skewX(-15deg);
+        @include for-desktop($formSmDesktopBpoint) {
+            width: 50%;
+        }
+        @include for-phone($phoneWidth) {
+            width: 100%;
+        }
+        &:not(:last-of-type) {
+            margin-right: 30px;
+            @include for-desktop($formSmDesktopBpoint) {
+                margin: 0 0 30px 0;
+            }
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: 7px;
+            position: absolute;
+            top: -7px;
+            left: -7px;
+            background: $primaryColor;
+        }
+        &:before {
+            content: '';
+            display: block;
+            width: 45px;
+            height: 7px;
+            position: absolute;
+            top: 19px;
+            left: -26px;
+            background: $primaryColor;
+            transform: rotate(90deg);
+        }
+    }
+    &_input {
+        width: 100%;
+        transform: skewX(15deg);
+        background: none;
+        font-size: rem(14);
+        font-family: $contactMainFont;
+        color: $formFontColor;
+        cursor: pointer;
+        &::placeholder {
+            color: $formFontColor;
+            text-transform: uppercase;
+            font-family: $contactMainFont;
+            font-style: italic;
+        }
+    }
+    &_submit {
+        margin-top: 50px;
+        position: relative;
+        transform: skewX(-15deg);
+        transform-style: preserve-3d;
+        z-index: 1000;
+        & .btn_text {
+            transform: skewX(15deg);
+            font-family: $contactMainFont;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: 180px;
+            height: 60px;
+            position: absolute;
+            top: -5px;
+            left: 10px;
+            background: $defaulColor;
+            transform: translateZ(-1px);
+        }
+    }
+}

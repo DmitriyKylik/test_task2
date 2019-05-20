@@ -1,0 +1,41 @@
+// First layout fonts
+$helveticaSerif: Helvetica, Arial, sans-serif;
+$starTitleFont: 'MyriadRegular', $helveticaSerif;
+$starSubTitleFont: 'Playfair Display', $helveticaSerif;
+// Second layout fonts
+$transportTitleFont: 'MullerBold', $helveticaSerif;
+$transportTextFont:  'MullerRegular', $helveticaSerif;
+// Third layout fonts
+$contactMainFont: 'Oswald', $helveticaSerif;
+// Fourth layout fonts
+$blogTitleFont: 'Oswald', $helveticaSerif; // duplication if we want to change font in fourth section
+$blogmainFont: 'ProximaRegular', $helveticaSerif;
+
+$mainFontColor: #121212;
+$secondaryFontColor: #fff;
+$neutralFontColor: #999898; // 2.psd
+$neutralSecondaryColor: #828c90; // 4.psd
+$formFontColor: #a0a0a0;
+$mainFontSize: 18px;
+$mainFontWeight: 400;
+$mainLineHeight: 1.5;
+
+// Size
+$lgDesktopWidth: 1920px;
+$desktopWidth: 1340px;
+$smDesktopWidth: 980px;
+$tableWidth: 768px;
+$phoneWidth: 480px;
+$smPhoneWidth: 320px;
+
+// Secondary Breakpoints
+$transportDesktopBpoint: 1100px;
+$formSmDesktopBpoint: 910px;
+$blogSmDesktopBpoint: 988px;
+
+// Main color
+$mainColor: #121212;
+$primaryColor: #0a97aa; // 3, 4.psd
+$primaryLightColor: #f0f6f6;
+$defaulColor: #fff;
+$lightColor: #a46c53;

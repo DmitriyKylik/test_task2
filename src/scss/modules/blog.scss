@@ -1,0 +1,176 @@
+.blog {
+    // Side padding already defined on common.scss
+    padding-top: 60px;
+    padding-bottom: 130px;
+    font-family: $blogmainFont;
+    & .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &_description {
+        width: 100%;
+        margin: 40px 0 60px;
+        text-align: center;
+    }
+    &_subtitle {
+        text-transform: uppercase;
+        color: $primaryColor;
+    }
+    &_title {
+        font-family: $blogTitleFont;
+        font-style: italic;
+        text-transform: uppercase;
+    }
+    &_main_title {
+        display: inline-block;
+        position: relative;
+        font-size: rem(50);
+        background: none;
+        transform-style: preserve-3d;
+        &:before {
+            content: '';
+            display: block;
+            min-width: 150%;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) skewX(-15deg) translateZ(-1px);
+            background: $primaryLightColor;
+        }
+    }
+}
+
+.news {
+    display: flex;
+    justify-content: space-between;
+    @include for-desktop($blogSmDesktopBpoint) {
+        flex-wrap: wrap;
+    }
+    &_inner {
+        display: flex;
+        width: 29%;
+        flex-direction: column;
+        @include for-desktop($blogSmDesktopBpoint) {
+            width: 100%;
+            margin-top: 30px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+    &_link {
+        text-transform: uppercase;
+        color: $primaryColor;
+        @include for-desktop($blogSmDesktopBpoint) {
+            width: 100%;
+        }
+    }
+    & .link_more {
+        text-align: right;
+        &_text {
+            margin-right: 20px;
+        }
+    }
+    &_list {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 25px;
+        @include for-desktop($blogSmDesktopBpoint) {
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+    & .item_news {
+        width: 100%;
+        // max-width: 390px;
+        min-height: 245px;
+        // max-height: 245px;
+        position: relative;
+        background: no-repeat 50%;
+        background-size: contain;
+        color: $secondaryFontColor;
+        &_inner {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        &_datetime {
+            margin-bottom: 25px;
+            font-size: rem(16);
+            color: $primaryColor;
+        }
+        &_title {
+            font-size: rem(30);
+        }
+    }
+    &_item {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+            @include for-desktop($blogSmDesktopBpoint) {
+                margin-bottom: 20px;
+            }
+        }
+        @include for-desktop($blogSmDesktopBpoint) {
+            margin-bottom: 20px;
+        }
+    }
+    &_active {
+        display: flex;
+        width: 65%;
+        position: relative;
+        background: $defaulColor;
+        box-shadow: 0 0 6px 0 $mainColor;
+        cursor: pointer;
+        @include for-desktop($blogSmDesktopBpoint) {
+            width: 100%;
+        }
+        @include for-tablet($tableWidth) {
+            flex-direction: column;
+        }
+        &_link {
+            width: 50px;
+            height: 100%;
+            position: absolute;
+            background: $primaryColor;
+            &_img {
+                @include imageCenterFixed;
+            }
+        }
+        &_view {
+            width: 45%;
+            @include for-tablet($tableWidth) {
+                width: 100%;
+            }
+        }
+        &_img {
+            @include imageCover;
+        }
+        &_info {
+            width: 55%;
+            padding: 55px 65px 65px;
+            @include for-tablet($tableWidth) {
+                width: 100%;
+                padding-right: 30px;
+            }
+        }
+        &_datetime {
+            color: $neutralSecondaryColor;
+        }
+        &_title {
+            font-size: rem(36);
+            margin-bottom: 30px;
+            @include for-desktop($blogSmDesktopBpoint) {
+                font-size: rem(30);
+            }
+        }
+        &_text {
+            color: $neutralSecondaryColor;
+        }
+    }
+}

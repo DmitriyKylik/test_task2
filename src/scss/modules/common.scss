@@ -1,0 +1,101 @@
+html {
+    line-height: $mainLineHeight;
+    font-size: $mainFontSize;
+    color: $mainFontColor;
+    height: 100%;
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 16px;
+    }
+    @media screen and (max-width: $tableWidth) {
+        font-size: 14px;
+    }
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 12px;
+    }
+}
+
+section,
+.section {
+    position: relative;
+    padding: 0 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    max-width: $desktopWidth;
+    margin: 0 auto;
+}
+
+.vertical_line {
+    display: inline-flex;
+    height: 125px;
+    border-left: 1px solid $mainColor;
+}
+
+.border_left_green {
+    border-left: 1px solid $primaryColor;
+}
+
+.btn {
+    @include button;
+    background: none;
+    &_sm {
+        width: 180px;
+        padding: 15px 0;
+    }
+    &_border-green {
+        border: 1px solid $primaryColor;
+    }
+    &_color-green {
+        color: $primaryColor;
+    }
+    &_text {
+        @include textOverflow;
+    }
+}
+
+.scaled {
+    transition: all 0.3s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.scaled_skewed {
+    transition: all 0.3s;
+    &:hover {
+        transform: scale(1.05) skew(-15deg);
+    }
+}
+
+.translate_effect_skewed {
+    transition: all 0.3s;
+    &:hover {
+        transform: translateY(-4px) skew(-15deg);
+    }
+}
+
+.translate_effect {
+    transition: all 0.3s;
+    &:hover {
+        transform: translateY(-4px);
+    }
+}
+
+.scaleX_effect {
+    transition: all 0.3s;
+    &:hover {
+        transform: scaleX(1.1);
+    }
+}
